@@ -1,0 +1,7 @@
+# Step 6: describe the project's containers (services) here.
+#
+# Task 6.2: the project name (ds-project), the db service and the declaration of its volume
+# Task 6.3: the api service
+# Task 6.5: the healthcheck of the db service and the startup order of the api service
+#
+# Step 8: the train service, the model volume, and how they connect to the api service

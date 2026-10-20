@@ -1,7 +1,7 @@
-# Step 6: describe the project's containers (services) here.
+# Étape 6 : décrivez ici les conteneurs (services) du projet.
 #
-# Task 6.2: the project name (ds-project), the db service and the declaration of its volume
-# Task 6.3: the api service
-# Task 6.5: the healthcheck of the db service and the startup order of the api service
+# Tâche 6.2 : le nom du projet (fil-rouge), le service db et la déclaration de son volume
+# Tâche 6.3 : le service api
+# Tâche 6.5 : le healthcheck du service db et l'ordre de démarrage du service api
 #
-# Step 8: the train service, the model volume, and how they connect to the api service
+# Étape 8 : le service train, le volume du modèle, et leur branchement sur le service api

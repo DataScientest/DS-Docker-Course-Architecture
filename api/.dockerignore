@@ -1,2 +1,2 @@
-# Step 4: list here, one pattern per line, the files and folders to exclude
-# from the build context (and therefore from the image).
+# Étape 4 : listez ici, un motif par ligne, les fichiers et dossiers à exclure
+# du contexte de construction (et donc de l'image).

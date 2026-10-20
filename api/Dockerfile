@@ -1,14 +1,14 @@
-# Step 4: complete this Dockerfile.
-# Under each comment, write the corresponding instruction (or instructions).
+# Étape 4 : complétez ce Dockerfile.
+# Sous chaque commentaire, écrivez l'instruction (ou les instructions) correspondante(s).
 
-# 1. Start from the python:3.13-slim image
+# 1. Partir de l'image python:3.13-slim
 
-# 2. Work in the /app folder
+# 2. Travailler dans le dossier /app
 
-# 3. Install the dependencies listed in requirements.txt, taking advantage of the cache (as in step 2)
+# 3. Installer les dépendances listées dans requirements.txt, en profitant du cache (comme à l'étape 2)
 
-# 4. Copy all the application code
+# 4. Copier tout le code de l'application
 
-# 5. Document the port used by the application (8000)
+# 5. Documenter le port utilisé par l'application (8000)
 
-# 6. Start the application with the command found during the step 3 investigation
+# 6. Lancer l'application avec la commande trouvée lors de l'enquête de l'étape 3

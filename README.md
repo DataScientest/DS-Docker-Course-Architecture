@@ -1,72 +1,72 @@
-# Docker running project: starting point
+# Projet fil rouge Docker : point de départ
 
-🇫🇷 *Version française : branche [`fr`](https://github.com/DataScientest/DS-Docker-Course-Architecture/tree/fr).*
+🇬🇧 *English version: branch [`main`](https://github.com/DataScientest/DS-Docker-Course-Architecture/tree/main).*
 
-This repository is your starting point for the hands-on project of the Docker module. By the end of the module, it will run three containers connected by Docker Compose:
+Ce dépôt est votre point de départ pour le cas pratique du module Docker. À la fin du module, il fera tourner trois conteneurs reliés par Docker Compose :
 
-- **`db`**: a MariaDB database, which holds 1,000 customer transactions;
-- **`train`**: a one-off job that trains a fraud detection model on these transactions;
-- **`api`**: a FastAPI web API that gives access to the transactions and to the model's predictions.
+- **`db`** : une base de données MariaDB, qui contient 1 000 transactions clients ;
+- **`train`** : un traitement ponctuel qui entraîne un modèle de détection de fraude à partir de ces transactions ;
+- **`api`** : une API web FastAPI qui donne accès aux transactions et aux prédictions du modèle.
 
-All the code (Python, SQL) is provided: you only write the Docker part. Follow the course step by step: it tells you when and how to complete each file.
+Tout le code (Python, SQL) est fourni : vous n'écrivez que la partie Docker. Suivez le cours étape par étape : il vous indique quand et comment compléter chaque fichier.
 
-## Repository contents
+## Contenu du dépôt
 
 ```
 DS-Docker-Course-Architecture/
-├── step2-first-dockerfile/       the step 2 warm-up exercise (not part of the project)
-│   ├── hello.py
+├── etape2-premier-dockerfile/    l'exercice d'échauffement de l'étape 2 (hors projet)
+│   ├── bonjour.py
 │   ├── requirements.txt
-│   └── Dockerfile                ✏️ fill-in-the-blanks template (step 2)
+│   └── Dockerfile                ✏️ modèle à trous (étape 2)
 │
-├── api/                          api service: the FastAPI application
-│   ├── main.py                   the application (provided)
-│   ├── requirements.txt          its dependencies (✏️ one line to add in step 8)
-│   ├── Dockerfile                ✏️ to write (step 4)
-│   └── .dockerignore             ✏️ to complete (step 4)
-├── db/                           db service: the MariaDB database
-│   ├── Dockerfile                ✏️ to write (step 5)
+├── api/                          service api : l'API FastAPI
+│   ├── main.py                   l'application (fournie)
+│   ├── requirements.txt          ses dépendances (✏️ une ligne à ajouter à l'étape 8)
+│   ├── Dockerfile                ✏️ à écrire (étape 4)
+│   └── .dockerignore             ✏️ à compléter (étape 4)
+├── db/                           service db : la base MariaDB
+│   ├── Dockerfile                ✏️ à écrire (étape 5)
 │   ├── init/
-│   │   └── 01_transactions.sql   creates the table and loads the CSV into it (provided)
+│   │   └── 01_transactions.sql   crée la table et y charge le CSV (fourni)
 │   └── data/
-│       └── transactions.csv      1,000 fictitious customer transactions (provided)
-├── train/                        train service: model training
-│   ├── train.py                  the training script (provided)
-│   ├── requirements.txt          its dependencies (provided)
-│   ├── Dockerfile                ✏️ to write (step 8)
-│   └── .dockerignore             ✏️ to complete (step 8)
-└── compose.yaml                  ✏️ to write (steps 6 and 8)
+│       └── transactions.csv      1 000 transactions clients fictives (fournies)
+├── train/                        service train : l'entraînement du modèle
+│   ├── train.py                  le script d'entraînement (fourni)
+│   ├── requirements.txt          ses dépendances (fournies)
+│   ├── Dockerfile                ✏️ à écrire (étape 8)
+│   └── .dockerignore             ✏️ à compléter (étape 8)
+└── compose.yaml                  ✏️ à écrire (étapes 6 et 8)
 ```
 
-Each service has its own folder, named after it, which contains its Dockerfile. The `step2-first-dockerfile/` folder is not part of the project: it is the step 2 exercise.
+Chaque service a son dossier, qui porte son nom et contient son Dockerfile. Le dossier `etape2-premier-dockerfile/` ne fait pas partie du projet : c'est l'exercice de l'étape 2.
 
-## What you will complete
+## Ce que vous allez compléter
 
-The files marked ✏️ only contain comments for now, which describe what they must contain.
+Les fichiers marqués ✏️ ne contiennent pour l'instant que des commentaires, qui décrivent ce qu'ils doivent contenir.
 
-| File | Step | What to do |
+| Fichier | Étape | Ce qu'il faut faire |
 |---|---|---|
-| `step2-first-dockerfile/Dockerfile` | 2 | Replace each `_____` with the right instruction |
-| `api/Dockerfile` | 4 | Write, under each comment, the corresponding instruction |
-| `api/.dockerignore` | 4 | List the files that must not be copied into the image |
-| `db/Dockerfile` | 5 | Start from the official MariaDB image and add the scripts and data to it |
-| `compose.yaml` | 6 | Describe the `db` and `api` services, their volume and their startup order |
-| `train/Dockerfile`, `train/.dockerignore` | 8 | Write them, based on the specifications in the course |
-| `compose.yaml`, `api/requirements.txt` | 8 | Add the `train` service and connect the model to the API |
+| `etape2-premier-dockerfile/Dockerfile` | 2 | Remplacer chaque `_____` par la bonne instruction |
+| `api/Dockerfile` | 4 | Écrire, sous chaque commentaire, l'instruction correspondante |
+| `api/.dockerignore` | 4 | Lister les fichiers à ne pas copier dans l'image |
+| `db/Dockerfile` | 5 | Partir de l'image officielle de MariaDB et y ajouter les scripts et les données |
+| `compose.yaml` | 6 | Décrire les services `db` et `api`, leur volume et leur ordre de démarrage |
+| `train/Dockerfile`, `train/.dockerignore` | 8 | Les écrire, d'après le cahier des charges du cours |
+| `compose.yaml`, `api/requirements.txt` | 8 | Ajouter le service `train` et brancher le modèle sur l'API |
 
-You do not need to modify the other files.
+Vous n'avez pas besoin de modifier les autres fichiers.
 
-## The provided programs
+## Les programmes fournis
 
-| Program | How to start it | Configuration (environment variables) |
+| Programme | Lancement | Configuration (variables d'environnement) |
 |---|---|---|
 | `api/main.py` | `uvicorn main:app --host 0.0.0.0 --port 8000` | `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`, `MODEL_PATH` |
-| `train/train.py` | `python train.py` | The same `DB_*` variables, and `MODEL_PATH` |
+| `train/train.py` | `python train.py` | Les mêmes variables `DB_*`, et `MODEL_PATH` |
 
-Each variable is described at the top of each program. Once the API is running, its interactive documentation is available at `/docs`.
+Le détail de chaque variable figure en tête de chaque programme. Une fois l'API lancée, sa documentation interactive est accessible à l'adresse `/docs`.
 
-## Resources
+## Ressources
 
-- The [Docker cheat sheet](https://drive.google.com/file/d/1daIaVPO422omOqWVgqnzwZKexJH7Iz6U/view?usp=sharing): a PDF of six sheets with the commands, file templates and solutions to the most common errors.
-- The official Docker documentation: https://docs.docker.com
-- The solution is published in the [DS-Docker-Course-Solution](https://github.com/DataScientest/DS-Docker-Course-Solution) repository: it is the final project, as it should be at the end of step 8. Use it to compare with your work once a step is done, not to avoid searching.
+- Le [mémo Docker](https://drive.google.com/file/d/1zYblRINrIXSGXdlzFDao3YJ78pEcwL5r/view?usp=sharing) : un PDF de six fiches avec les commandes, les modèles de fichiers et les solutions aux erreurs les plus fréquentes.
+- La documentation officielle de Docker : https://docs.docker.com
+- La solution est publiée dans le dépôt [DS-Docker-Course-Solution](https://github.com/DataScientest/DS-Docker-Course-Solution/tree/fr) (branche `fr`) : c'est le projet final, tel qu'il doit être à la fin de l'étape 8. Utilisez-la pour comparer avec votre travail une fois une étape terminée, pas pour éviter de chercher.

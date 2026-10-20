@@ -1,8 +1,8 @@
-# Step 5: complete this Dockerfile.
-# Under each comment, write the corresponding instruction.
+# Étape 5 : complétez ce Dockerfile.
+# Sous chaque commentaire, écrivez l'instruction correspondante.
 
-# 1. Start from the official mariadb:12.3 image
+# 1. Partir de l'image officielle mariadb:12.3
 
-# 2. Copy the contents of the init/ folder into the image's /docker-entrypoint-initdb.d/ folder
+# 2. Copier le contenu du dossier init/ dans le dossier /docker-entrypoint-initdb.d/ de l'image
 
-# 3. Copy the contents of the data/ folder into the image's /data/ folder
+# 3. Copier le contenu du dossier data/ dans le dossier /data/ de l'image
